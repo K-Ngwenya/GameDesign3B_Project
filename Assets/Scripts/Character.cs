@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 public class Character : MonoBehaviour
 {
     [Header("Controls")]
-    public float playerSpeed = 2f;
-    public float sprintSpeed = 4f;
-    public float jumpHeight = 0.4f; 
-    public float gravityMultiplier = 1.5f;
-    public float rotationSpeed = 2f;
+    public float playerSpeed = 5f;
+    public float sprintSpeed = 7f;
+    public float jumpHeight = 1.6f; 
+    public float gravityMultiplier = 2f;
+    public float rotationSpeed = 5f;
 
     [Header("Animation Smoothing")]
     [Range(0, 1)]
@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
     [Range(0, 1)]
     public float rotationDampTime = 0.2f;
     [Range(0, 1)]
-    public float airControl = 0.3f;
+    public float airControl = 0.5f;
 
     public StateMachine movementSM;
     public StandingState standing;
@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
     public AttackState attacking;
 
     [HideInInspector]
-    public float gravityValue = -9.8f;
+    public float gravityValue = -9.81f;
     [HideInInspector]
     public CharacterController controller;
     [HideInInspector]
