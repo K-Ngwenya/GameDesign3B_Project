@@ -3,7 +3,6 @@ using UnityEngine;
 public class JumpingState:State
 {
     bool grounded;
-
     float gravityValue;
     float jumpHeight;
     float playerSpeed;
@@ -30,6 +29,7 @@ public class JumpingState:State
         character.animator.SetTrigger("jump");
         Jump();
 	}
+
 	public override void HandleInput()
 	{
 		base.HandleInput();
@@ -52,14 +52,13 @@ public class JumpingState:State
         base.PhysicsUpdate();
 		if (!grounded)
 		{
-
             velocity = character.playerVelocity;
             airVelocity = new Vector3(input.x, 0, input.y);
 
-            /*velocity = velocity.x  + velocity.z;
+            velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
             velocity.y = 0f;
-            airVelocity = airVelocity.x + airVelocity.z;
-            airVelocity.y = 0f;*/
+            airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized; ;
+            airVelocity.y = 0f;
             character.controller.Move(gravityVelocity * Time.deltaTime+ (airVelocity*character.airControl+velocity*(1- character.airControl))*playerSpeed*Time.deltaTime);
         }
 
@@ -69,7 +68,7 @@ public class JumpingState:State
 
     void Jump()
     {
-        gravityVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        gravityVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
     }
 
 }

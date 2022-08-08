@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     public float playerSpeed = 2f;
     public float sprintSpeed = 4f;
     public float jumpHeight = 0.4f; 
-    public float gravityMultiplier = 1.2f;
+    public float gravityMultiplier = 1.5f;
     public float rotationSpeed = 2f;
 
     [Header("Animation Smoothing")]
@@ -25,17 +25,17 @@ public class Character : MonoBehaviour
     public JumpingState jumping;
     public LandingState landing;
     public SprintState sprinting;
-    //public CombatState combatting;
-    //public AttackState attacking;
+    public CombatState combatting;
+    public AttackState attacking;
 
     [HideInInspector]
     public float gravityValue = -9.8f;
     [HideInInspector]
-    public float normalColliderHeight;
-    [HideInInspector]
     public CharacterController controller;
     [HideInInspector]
     public PlayerInput playerInput;
+    [HideInInspector]
+    public Transform cameraTransform;
     [HideInInspector]
     public Animator animator;
     [HideInInspector]
@@ -46,18 +46,17 @@ public class Character : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
+        cameraTransform = Camera.main.transform;
 
         movementSM = new StateMachine();
         standing = new StandingState(this, movementSM);
         jumping = new JumpingState(this, movementSM);
         landing = new LandingState(this, movementSM);
         sprinting = new SprintState(this, movementSM);
-        //combatting = new CombatState(this, movementSM);
-        //attacking = new AttackState(this, movementSM);
+        combatting = new CombatState(this, movementSM);
+        attacking = new AttackState(this, movementSM);
 
         movementSM.Initialize(standing);
-
-        normalColliderHeight = controller.height;
         gravityValue *= gravityMultiplier;
     }
 

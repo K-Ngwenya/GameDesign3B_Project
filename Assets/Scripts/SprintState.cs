@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class SprintState : State
 {
     float gravityValue;
@@ -36,8 +37,8 @@ public class SprintState : State
         input = moveAction.ReadValue<Vector2>();
         velocity = new Vector3(input.x, 0, input.y);
 
-        /*velocity = velocity.x + velocity.z;
-        velocity.y = 0f;*/
+        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized; ;
+        velocity.y = 0f;
         if (sprintAction.triggered || input.sqrMagnitude == 0f)
         {
             sprint = false;

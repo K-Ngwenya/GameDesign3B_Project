@@ -13,6 +13,7 @@ public class State
     public InputAction moveAction;
     public InputAction jumpAction;
     public InputAction sprintAction;
+    public InputAction attackAction;
 
     public State(Character _character, StateMachine _stateMachine)
 	{
@@ -22,6 +23,7 @@ public class State
         moveAction = character.playerInput.actions["Move"];
         jumpAction = character.playerInput.actions["Jump"];
         sprintAction = character.playerInput.actions["Sprint"];
+        attackAction = character.playerInput.actions["Attack"];
     }
 
     public virtual void Enter()
