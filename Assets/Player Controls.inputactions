@@ -11,7 +11,7 @@
                     "id": "37a77aee-26b3-436c-a88b-37f1221c4941",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": true
                 },
                 {
@@ -20,7 +20,7 @@
                     "id": "8a3c4446-4ce9-4515-a3e7-bf9f2f4fa0db",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -29,16 +29,7 @@
                     "id": "cb0a38dd-f113-4e98-afb0-101fbc34f60e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(pressPoint=0.5,behavior=2)",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "63148bda-3df1-4443-a750-9e348cdd6f15",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 }
             ],
@@ -47,7 +38,7 @@
                     "name": "2D Vector",
                     "id": "cdbead2f-9e9e-4652-a64d-1b109bb0726c",
                     "path": "2DVector",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
@@ -102,7 +93,7 @@
                     "name": "",
                     "id": "b1382a81-739a-40f5-9ce2-d8656bdb3ba9",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
@@ -113,21 +104,10 @@
                     "name": "",
                     "id": "031f2235-31b1-47d8-b684-2e09991df4e5",
                     "path": "<Keyboard>/shift",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3663e1c4-61b8-480c-bba0-f2cb5b523319",
-                    "path": "<Keyboard>/v",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

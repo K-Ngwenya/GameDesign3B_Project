@@ -67,7 +67,7 @@ public class StandingState: State
         if (jump)
         {
             stateMachine.ChangeState(character.jumping);
-        }
+        } 
     }
 
     public override void PhysicsUpdate()
