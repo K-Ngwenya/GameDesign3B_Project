@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    bool canDealDamage;
+    /*bool canDealDamage;
     List<GameObject> hasDealtDamage;
 
     [SerializeField] float weaponLength;
@@ -24,14 +24,14 @@ public class DamageDealer : MonoBehaviour
             int layerMask = 1 << 9;
             if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
-                if (/*hit.transform.TryGetComponent(out Enemy enemy) && */!hasDealtDamage.Contains(hit.transform.gameObject))
-                {
-<<<<<<< Updated upstream
+                if (/*hit.transform.TryGetComponent(out Enemy enemy) && *///!hasDealtDamage.Contains(hit.transform.gameObject))
+                //{
+ //Updated upstream
                     //enemy.TakeDamage(Damage);
-=======
+
                    // enemy.TakeDamage(weaponDamage);
->>>>>>> Stashed changes
-                    hasDealtDamage.Add(hit.transform.gameObject);
+// Stashed changes
+                  /*  hasDealtDamage.Add(hit.transform.gameObject);
                 }
             }
         }
@@ -52,5 +52,5 @@ public class DamageDealer : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position - transform.up * weaponLength);
-    }
+    }*/
 }
