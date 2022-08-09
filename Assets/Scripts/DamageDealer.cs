@@ -26,7 +26,11 @@ public class DamageDealer : MonoBehaviour
             {
                 if (/*hit.transform.TryGetComponent(out Enemy enemy) && */!hasDealtDamage.Contains(hit.transform.gameObject))
                 {
+<<<<<<< Updated upstream
                     //enemy.TakeDamage(Damage);
+=======
+                   // enemy.TakeDamage(weaponDamage);
+>>>>>>> Stashed changes
                     hasDealtDamage.Add(hit.transform.gameObject);
                 }
             }
