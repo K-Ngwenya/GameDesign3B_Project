@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class JumpingState:State
@@ -6,8 +7,17 @@ public class JumpingState:State
     float gravityValue;
     float jumpHeight;
     float playerSpeed;
+    bool attacking;
+
+    public Hit hit;
+
+    Rigidbody enemy;
 
     Vector3 airVelocity;
+
+    private void Start() {
+        attacking = false;
+    }
 
     public JumpingState(Character _character, StateMachine _stateMachine) : base(_character, _stateMachine)
 	{
@@ -69,7 +79,11 @@ public class JumpingState:State
     void Jump()
     {
         gravityVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        
     }
+
+
+
 
 }
 

@@ -1,47 +1,43 @@
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+public class EnemyDamageDealer : MonoBehaviour
 {
-    /*bool canDealDamage;
-    List<GameObject> hasDealtDamage;
+    bool canDealDamage;
+    bool hasDealtDamage;
 
     [SerializeField] float weaponLength;
-    [SerializeField] float Damage;
+    [SerializeField] float weaponDamage;
 
     void Start()
     {
         canDealDamage = false;
-        hasDealtDamage = new List<GameObject>();
+        hasDealtDamage = false;
     }
 
     void Update()
     {
-        if (canDealDamage)
+        if (canDealDamage && !hasDealtDamage)
         {
             RaycastHit hit;
 
-            int layerMask = 1 << 9;
+            int layerMask = 1 << 8;
             if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
-                if (hit.transform.TryGetComponent(out Enemy enemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
+                if (hit.transform.TryGetComponent(out HealthSystem health))
                 {
- 
-                    //enemy.TakeDamage(Damage);
-
-                     enemy.TakeDamage(weaponDamage);
-                    hasDealtDamage.Add(hit.transform.gameObject);
+                    health.TakeDamage(weaponDamage);
+                    hasDealtDamage = true;
                 }
             }
         }
     }
-
     public void StartDealDamage()
     {
         canDealDamage = true;
-        hasDealtDamage.Clear();
+        hasDealtDamage = false;
     }
-
     public void EndDealDamage()
     {
         canDealDamage = false;
@@ -51,5 +47,5 @@ public class DamageDealer : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position - transform.up * weaponLength);
-    }*/
+    }
 }
